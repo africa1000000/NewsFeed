@@ -23,6 +23,11 @@ module.exports = {
         test: /\.svg$/,
         type: "asset/resource",
       },
+      {
+        test: /\.(ts | tsx)$/,
+        type: "ts-loader",
+        exclude: /node-modules/,
+      },
     ],
   },
   plugins: [

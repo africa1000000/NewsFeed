@@ -3,7 +3,7 @@ import { MainArticle } from "../MainArticle/MainArticle.js";
 import { SmallArticle } from "../SmallArticle/SmallArticle.js";
 import "./Articles.css";
 
-export const Articles = ({ articles }) => {
+export const Articles = ({ articles, onArticleClick }) => {
   return (
     <section className="articles">
       <div className="container grid">
@@ -22,6 +22,7 @@ export const Articles = ({ articles }) => {
                 source={
                   articles.sources.find(({ id }) => item.source_id === id).name
                 }
+                onClick={() => onArticleClick(item.id)}
               />
             );
           })}
@@ -39,6 +40,7 @@ export const Articles = ({ articles }) => {
                 source={
                   articles.sources.find(({ id }) => item.source_id === id).name
                 }
+                onClick={() => onArticleClick(item.id)}
               />
             );
           })}

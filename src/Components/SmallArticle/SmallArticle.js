@@ -1,13 +1,18 @@
 import React from "react";
 import "./SmallArticle.css";
 
-export const SmallArticle = ({ title, date, source }) => {
+export const SmallArticle = ({ title, date, source, onClick }) => {
   return (
-    <article className="small-article">
+    <article className="small-article" onClick={onClick}>
       <h2 className="small-article__title">{title}</h2>
       <p className="small-article__caption">
         <span className="article-date small-article__date">{date}</span>
-        <span className="article-source small-article__source">{source}</span>
+        <span className="article-source small-article__source">
+          {new Date(date).toLocaleDateString("ru-RU", {
+            month: "long",
+            day: "numeric",
+          })}
+        </span>
       </p>
     </article>
   );

@@ -7,9 +7,10 @@ export const MainArticle = ({
   category,
   description,
   source,
+  onClick,
 }) => {
   return (
-    <article className="main-article">
+    <article className="main-article" onClick={onClick}>
       <div className="main-article__image-container">
         <img className="main-article__image" src={image} alt="Фото новости" />
       </div>
