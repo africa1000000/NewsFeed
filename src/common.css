@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --color-primary: #262a2f;
+  --color-accent: #6053a8;
+  --color-gray: #868686;
+  --color-white: #ffffff;
+
+  --container-width: 1440px;
+  --grid-column-width: 98px;
+  --grid-gap: 20px;
+}
+
+* {
+  all: unset;
+  display: revert;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #dddddd;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, var(--grid-column-width));
+  gap: var(--grid-gap);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.article-category {
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.article-source {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-gray);
+  text-transform: uppercase;
+}
+
+.article-date {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.article-date + .article-source::before {
+  content: " • ";
+}

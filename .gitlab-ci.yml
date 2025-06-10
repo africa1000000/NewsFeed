@@ -1,9 +1,12 @@
+image: node:22.15.1
+
 pages:
   stage: deploy
+  before_script:
+    - npm install
   script:
-    - mkdir .public
-    - cp -r * .public
-    - mv .public public
+    - npm run build
+    - cp -r dist public
   artifacts:
     paths:
       - public
