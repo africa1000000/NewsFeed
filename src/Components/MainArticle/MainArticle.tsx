@@ -1,7 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 import "./MainArticle.css";
 
-export const MainArticle = ({
+interface Props {
+  title: string;
+  image: string;
+  category: string;
+  description: string;
+  source: string;
+  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+}
+
+export const MainArticle: FC<Props> = ({
   title,
   image,
   category,

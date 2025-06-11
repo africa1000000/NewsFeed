@@ -1,9 +1,16 @@
-import { categoryNames } from "../../utils.js";
-import React from "react";
+import { categoryNames } from "../../utils";
+import React, { FC } from "react";
 import "./Navigation.css";
 import logo from "../../images/logo.svg";
 
-export const Navigation = ({
+interface Props {
+  onNavClick: (event: React.MouseEvent<HTMLElement>) => void;
+  currentCategory: string;
+  className?: string;
+  placement: "header" | "footer";
+}
+
+export const Navigation: FC<Props> = ({
   onNavClick,
   currentCategory,
   className = "",
@@ -31,6 +38,7 @@ export const Navigation = ({
                 data-href={item}
                 onClick={onNavClick}
               >
+                {/* @ts-ignore */}
                 {categoryNames[item]}
               </a>
             </li>
