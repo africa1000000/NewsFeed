@@ -1,19 +1,33 @@
-import React from "react";
+import React, { FC } from "react";
 import "./SingleLineTitleArticle.css";
 
-export const SingleLineTitleArticle = () => {
+interface Props {
+  image: string;
+  category: string;
+  source: string;
+  title: string;
+  text: string;
+  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+}
+
+export const SingleLineTitleArticle: FC<Props> = ({
+  image,
+  category,
+  source,
+  text,
+  title,
+  onClick,
+}) => {
   return (
-    <article className="single-line-title-article">
-      <img className="single-line-title-article__image" src="" />
+    <article className="single-line-title-article" onClick={onClick}>
+      <img className="single-line-title-article__image" src={image} />
       <span className="article-category single-line-title-article__category">
-        Мода
+        {category}
       </span>
-      <h2 className="single-line-title-article__title">
-        Заголовок в одну строку
-      </h2>
-      <p className="single-line-title-article__text">Текст этой новости</p>
+      <h2 className="single-line-title-article__title">{title}</h2>
+      <p className="single-line-title-article__text">{text}</p>
       <span className="article-source single-line-title-article__source">
-        Источник
+        {source}
       </span>
     </article>
   );

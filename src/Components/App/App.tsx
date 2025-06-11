@@ -1,6 +1,6 @@
 import { categoryIds } from "../../utils";
 import { Navigation } from "../Navigation/Navigation";
-import { Article } from "../Article/Article";
+import { ArticleItem } from "../ArticleItem/ArticleItem";
 import React from "react";
 import "./App.css";
 import { Articles } from "../Articles/Articles";
@@ -57,7 +57,12 @@ export const App = () => {
       </header>
       <main className="main">
         {articleId !== null ? (
-          <Article />
+          <ArticleItem
+            id={articleId}
+            categories={articles.categories}
+            sources={articles.sources}
+            onArticleClick={onArticleClick}
+          />
         ) : (
           <Articles articles={articles} onArticleClick={onArticleClick} />
         )}

@@ -1,19 +1,31 @@
-import React from "react";
+import React, { FC } from "react";
 import "./RelatedSmallArticle.css";
 
-export const RelatedSmallArticle = () => {
+interface Props {
+  image: string;
+  category: string;
+  source: string;
+  title: string;
+  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+}
+
+export const RelatedSmallArticle: FC<Props> = ({
+  image,
+  category,
+  source,
+  title,
+  onClick,
+}) => {
   return (
-    <article className="related-small-article">
-      <img className="related-small-article__image" src="" />
+    <article className="related-small-article" onClick={onClick}>
+      <img className="related-small-article__image" src={image} />
       <div className="related-small-article__content">
         <span className="article-category related-small-article__category">
-          Мода
+          {category}
         </span>
-        <h2 className="related-small-article__title">
-          Это слова-филлеры для этой новости можно только одну строку текста
-        </h2>
+        <h2 className="related-small-article__title">{title}</h2>
         <span className="article-source related-small-article__source">
-          Источник
+          {source}
         </span>
       </div>
     </article>
