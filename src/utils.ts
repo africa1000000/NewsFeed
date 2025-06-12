@@ -9,16 +9,16 @@ export const categoryIds = {
 };
 
 export const categoryNames = {
-  index: "Главная",
-  fashion: "Мода",
-  tech: "Технологии",
-  politics: "Политика",
-  sport: "Спорт",
+  index: 'Главная',
+  fashion: 'Мода',
+  tech: 'Технологии',
+  politics: 'Политика',
+  sport: 'Спорт',
 };
 
 export const beautifyDate = (date: string): string => {
   return new Date(date).toLocaleDateString('ru-RU', {
     month: 'long',
     day: 'numeric',
-  })
-} 
+  });
+};

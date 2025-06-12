@@ -1,7 +1,7 @@
 export interface NewsAPI {
   sources: Source[];
   categories: Category[];
-  items: Article[]
+  items: Article[];
 }
 
 export interface ArticleItemAPI {

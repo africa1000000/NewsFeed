@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import "./SmallArticle.css";
-import { beautifyDate } from "../../utils";
+import React, { FC } from 'react';
+import './SmallArticle.css';
+import { beautifyDate } from '../../utils';
 
 interface Props {
   title: string;
@@ -15,9 +15,7 @@ export const SmallArticle: FC<Props> = ({ title, date, source, onClick }) => {
       <h2 className="small-article__title">{title}</h2>
       <p className="small-article__caption">
         <span className="article-date small-article__date">{source}</span>
-        <span className="article-source small-article__source">
-          {beautifyDate(date)}
-        </span>
+        <span className="article-source small-article__source">{beautifyDate(date)}</span>
       </p>
     </article>
   );

@@ -1,14 +1,14 @@
-import { categoryIds } from "../../utils";
-import { Navigation } from "../Navigation/Navigation";
-import { ArticleItem } from "../ArticleItem/ArticleItem";
-import React from "react";
-import "./App.css";
-import { Articles } from "../Articles/Articles";
-import { NewsAPI } from "../../types";
+import { categoryIds } from '../../utils';
+import { Navigation } from '../Navigation/Navigation';
+import { ArticleItem } from '../ArticleItem/ArticleItem';
+import React from 'react';
+import './App.css';
+import { Articles } from '../Articles/Articles';
+import { NewsAPI } from '../../types';
 
 export const App = () => {
   const [articleId, setArticleId] = React.useState<number | null>(null);
-  const [category, setCategory] = React.useState("index");
+  const [category, setCategory] = React.useState('index');
   const [articles, setArticles] = React.useState<NewsAPI>({
     items: [],
     categories: [],
@@ -33,9 +33,9 @@ export const App = () => {
 
   React.useEffect(() => {
     fetch(
-      "http://frontend.karpovcourses.net/api/v2/ru/news/" +
+      'http://frontend.karpovcourses.net/api/v2/ru/news/' +
         //@ts-ignore
-        categoryIds[category] || ""
+        categoryIds[category] || '',
     )
       .then((response) => response.json())
       .then((response: NewsAPI) => {

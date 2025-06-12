@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import "./MainArticle.css";
+import React, { FC } from 'react';
+import './MainArticle.css';
 
 interface Props {
   title: string;
@@ -10,23 +10,14 @@ interface Props {
   onClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-export const MainArticle: FC<Props> = ({
-  title,
-  image,
-  category,
-  description,
-  source,
-  onClick,
-}) => {
+export const MainArticle: FC<Props> = ({ title, image, category, description, source, onClick }) => {
   return (
     <article className="main-article" onClick={onClick}>
       <div className="main-article__image-container">
         <img className="main-article__image" src={image} alt="Фото новости" />
       </div>
       <div className="main-article__content">
-        <span className="article-category main-article__category">
-          {category}
-        </span>
+        <span className="article-category main-article__category">{category}</span>
         <h2 className="main-article__title">{title}</h2>
         <p className="main-article__text">{description}</p>
         <span className="article-source main-article__source">{source}</span>

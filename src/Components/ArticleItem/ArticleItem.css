@@ -59,7 +59,7 @@
 }
 
 .article__main {
-  grid-template-areas: "c c c c c c c . r r r r";
+  grid-template-areas: 'c c c c c c c . r r r r';
 }
 
 .article__title {

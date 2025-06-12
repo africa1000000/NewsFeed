@@ -4,8 +4,7 @@
   --color-primary: #262a2f;
   --color-accent: #6053a8;
   --color-gray: #868686;
-  --color-white: #ffffff;
-
+  --color-white: #fff;
   --container-width: 1440px;
   --grid-column-width: 98px;
   --grid-gap: 20px;
@@ -17,8 +16,8 @@
 }
 
 body {
-  font-family: "Rubik", sans-serif;
-  background-color: #dddddd;
+  font-family: Rubik, sans-serif;
+  background-color: #ddd;
   font-size: 22px;
   font-weight: 400;
 }

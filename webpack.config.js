@@ -1,42 +1,42 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { Extension } = require("typescript");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { Extension } = require('typescript');
 
 module.exports = {
-  mode: process.env.NODE_ENV || "production",
-  entry: "./src/script.tsx",
+  mode: process.env.NODE_ENV || 'production',
+  entry: './src/script.tsx',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.[contenthash].js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.[contenthash].js',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: "babel-loader",
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.svg$/,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       {
         test: /\.(ts|tsx)$/,
-        use: "ts-loader",
+        use: 'ts-loader',
         exclude: /node-modules/,
       },
     ],
   },
   resolve: {
-    extensions: [".js", ".ts", ".tsx"],
+    extensions: ['.js', '.ts', '.tsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: './src/index.html',
     }),
   ],
   devServer: {
